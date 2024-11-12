@@ -1,14 +1,13 @@
-// blogRoutes.js
 const express = require('express');
 const router = express.Router();
+const { getAllBlogs, createBlog, singleblog, updateBlog, deleteBlog } = require('../controllers/blogController');
 
-// Controllers (e.g., functions for creating and fetching blogs)
-const { getBlogs, createBlog, getBlogById } = require('../controllers/blogController');
 
-// Define routes
-router.get('/getblog', getBlogs);
-router.post('/newblog', createBlog);
-router.get('/:id/getblog', getBlogById);
+router.post('/New-blog', createBlog);
+router.get('/all-blogs', getAllBlogs);
+router.get('/:id/blogs', singleblog);
+router.put('/update/:id', updateBlog);
+router.delete('/delete/:id',deleteBlog);
 
-// Export the router
+
 module.exports = router;
