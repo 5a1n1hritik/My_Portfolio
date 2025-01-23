@@ -1,9 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const SkillItem = ({ Icon, name, level, levelColor }) => {
   return (
     <>
-      <div className="flex items-center gap-2">
+      <motion.div
+        className="flex items-center gap-2"
+        whileHover={{ scale: 1.1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <i className={`bi ${Icon} w-8 h-8 text-lg text-blue-500`}></i>
         <div>
           <h3 className="font-medium">{name}</h3>
@@ -11,7 +18,7 @@ const SkillItem = ({ Icon, name, level, levelColor }) => {
             {level}
           </span>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
