@@ -19,10 +19,10 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 z-50 bg-gray-900 text-white p-3 rounded-lg shadow-lg hover:bg-gray-800 hover:scale-105 transition-all"
+        className="fixed bottom-8 right-8 z-50 bg-gray-900 text-white p-3 rounded-lg shadow-lg hover:bg-gray-800 hover:scale-110 transition-all slide-in"
         aria-label="Scroll to top of the page"
       >
-        <i className="bi bi-arrow-up" aria-hidden="true"></i>
+        <i className="bi bi-arrow-up text-xl" aria-hidden="true"></i>
       </button>
     )
   );
