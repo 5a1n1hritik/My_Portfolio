@@ -7,3 +7,19 @@
   padding: 0;
   text-align: center;
 }
+
+.blinking-cursor {
+  display: inline-block;
+  border-right: 2px solid blue;
+  animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: blue;
+  }
+}
