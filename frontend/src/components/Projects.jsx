@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-
 import blog from "../assets/blog.jpeg";
 import wetherApp from "../assets/coldWether.png";
 import profile_bg from "../assets/portfolio-bg.jpeg";
@@ -63,13 +62,47 @@ const Projects = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-16">
-      <h1 className="text-4xl font-bold text-center mb-2">Portfolio</h1>
-      <p className="text-gray-600 text-center mb-12">Most recent work</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4">
+      <motion.h1
+        className="text-4xl font-bold text-center mb-2"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Portfolio
+      </motion.h1>
+      <motion.p
+        className="text-gray-600 text-center mb-12"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Most recent work
+      </motion.p>
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
         {portfolioItems.map((item) => (
-          <ProjectCard key={item.id} item={item} />
+          <motion.div
+            key={item.id}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <ProjectCard item={item} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
