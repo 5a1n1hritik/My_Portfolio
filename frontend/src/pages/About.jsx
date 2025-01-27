@@ -105,7 +105,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.a
-                href="/Resume.pdf"
+                href="/Hritik-Saini_resume.pdf"
                 download="Hritik_Saini_Resume.pdf"
                 className="inline-flex items-center gap-2 bg-gradient-to-l from-black to-blue-400 text-white px-6 py-3 rounded-lg hover:from-blue-400 hover:to-black transition-colors"
                 whileHover={{ scale: 1.1 }}

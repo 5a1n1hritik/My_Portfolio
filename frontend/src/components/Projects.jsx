@@ -15,7 +15,7 @@ const Projects = () => {
       title: "Weather App",
       category: "Web Application",
       img: wetherApp,
-      demoUrl: "*",
+      demoUrl: "https://weather-app-blond-ten-28.vercel.app/",
       repoUrl: "https://github.com/5a1n1hritik/Weather-App",
     },
     {
