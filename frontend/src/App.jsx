@@ -12,7 +12,6 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const App = () => {
   return (
-    <Router>
       <>
         <Navbar />
         
@@ -27,7 +26,6 @@ const App = () => {
         <Footer/>
         <ScrollToTopButton/>
       </>
-    </Router>
   );
 };
 
